@@ -6,6 +6,7 @@ import HistoricalComparison from "@/components/HistoricalComparison";
 import SectorAllocation from "@/components/SectorAllocation";
 import SuggestionForm from "@/components/SuggestionForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChartPie, FileText, BadgeIndianRupee } from "lucide-react";
 
 const Index = () => {
   return (
@@ -22,16 +23,32 @@ const Index = () => {
         </div>
         
         {/* Budget Overview */}
-        <h3 className="text-xl font-bold mb-4">Budget Overview</h3>
-        <BudgetOverview />
+        <div className="mb-8">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <BadgeIndianRupee className="w-5 h-5 mr-2 text-india-blue" />
+            Budget Overview
+          </h3>
+          <BudgetOverview />
+        </div>
         
         {/* Main Content with Tabs */}
         <div className="mt-8">
           <Tabs defaultValue="allocation" className="w-full">
             <TabsList className="mb-6 justify-start">
-              <TabsTrigger value="allocation">Sector Allocation</TabsTrigger>
-              <TabsTrigger value="historical">Historical Data</TabsTrigger>
-              <TabsTrigger value="feedback">Citizen Feedback</TabsTrigger>
+              <TabsTrigger value="allocation" className="flex items-center">
+                <ChartPie className="w-4 h-4 mr-2" />
+                <span>Sector Allocation</span>
+              </TabsTrigger>
+              <TabsTrigger value="historical" className="flex items-center">
+                <FileText className="w-4 h-4 mr-2" />
+                <span>Historical Data</span>
+              </TabsTrigger>
+              <TabsTrigger value="feedback" className="flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+                <span>Citizen Feedback</span>
+              </TabsTrigger>
             </TabsList>
             
             <TabsContent value="allocation">
