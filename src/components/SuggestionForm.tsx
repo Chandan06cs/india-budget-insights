@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { currentBudgetSectors } from "@/data/budgetData";
 import { useToast } from "@/components/ui/use-toast";
-import { Message, Send } from "lucide-react";
+import { MessageSquare, Send } from "lucide-react";
 
 const SuggestionForm = () => {
   const { toast } = useToast();
@@ -53,7 +53,7 @@ const SuggestionForm = () => {
     <Card>
       <CardHeader>
         <div className="flex items-center space-x-2">
-          <Message className="h-5 w-5 text-india-saffron" />
+          <MessageSquare className="h-5 w-5 text-india-saffron" />
           <CardTitle>Citizen Feedback</CardTitle>
         </div>
         <CardDescription>

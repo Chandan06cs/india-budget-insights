@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { currentBudgetYear, formatCrores, formatPercentage } from "@/data/budgetData";
-import { ArrowTrendingDown, ArrowTrendingUp, BadgeDollarSign } from "lucide-react";
+import { TrendingDown, TrendingUp, BadgeDollarSign } from "lucide-react";
 
 const BudgetOverview = () => {
   const { totalBudget, fiscalDeficit, gdp } = currentBudgetYear;
@@ -28,7 +28,7 @@ const BudgetOverview = () => {
           <div className="text-2xl font-bold mb-2 flex items-center">
             {formatCrores(totalBudget)}
             {isBudgetIncreasing && (
-              <ArrowTrendingUp className="w-5 h-5 ml-2 text-green-600" />
+              <TrendingUp className="w-5 h-5 ml-2 text-green-600" />
             )}
           </div>
           <p className="text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ const BudgetOverview = () => {
           <div className="text-2xl font-bold mb-2 flex items-center">
             {formatPercentage(fiscalDeficit)}
             {isDeficitDecreasing && (
-              <ArrowTrendingDown className="w-5 h-5 ml-2 text-green-600" />
+              <TrendingDown className="w-5 h-5 ml-2 text-green-600" />
             )}
           </div>
           <Progress value={fiscalDeficit * 10} className="h-2 mb-2" />
