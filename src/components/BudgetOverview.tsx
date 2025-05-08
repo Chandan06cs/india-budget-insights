@@ -47,8 +47,7 @@ const BudgetOverview = () => {
           </div>
           <Progress 
             value={80} 
-            className="h-2 mb-2" 
-            indicatorClassName="bg-india-saffron"
+            className="h-2 mb-2 bg-india-saffron/30"
           />
           <p className="text-sm text-muted-foreground">
             15.3% increase from previous year
@@ -115,7 +114,7 @@ const BudgetOverview = () => {
           <div className="text-2xl font-bold mb-2">
             {formatPercentage(budgetToGDPRatio)}
           </div>
-          <Progress value={budgetToGDPRatio} className="h-2 mb-2" indicatorClassName="bg-india-green" />
+          <Progress value={budgetToGDPRatio} className="h-2 mb-2 bg-india-green/30" />
           <p className="text-sm text-muted-foreground">
             Global average: ~30% for developing economies
           </p>
